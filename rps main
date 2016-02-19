@@ -1,0 +1,77 @@
+
+import java.util.*;
+
+
+public class rockpaperscissors {
+	
+	public static void main(String args[]) {
+	
+char loop = 'y';
+while(loop == ('y'))	{
+		Random myRandom = new Random();
+		int computerNumber;
+		String computerPlay = null;
+		String userPlay = null;
+		computerNumber = myRandom.nextInt(3)+1;
+		Scanner user = new Scanner(System.in);
+		Scanner responseScan = new Scanner(System.in);
+		String response = "";
+	 
+		System.out.println("Please choose: \n Rock=R \n Paper=P \n Scissors=S" );
+		
+		userPlay=user.next();
+		
+		if(computerNumber == 1){
+			computerPlay = "R";
+		}
+		if(computerNumber == 2){
+			computerPlay = "P";
+			
+		}
+		if(computerNumber == 3){
+			computerPlay = "S";
+			
+		}
+		if(computerNumber == 0){
+			computerPlay = "T";
+		}
+		
+		
+		if(userPlay.equals("R") && computerPlay.equals("P")){
+			System.out.println("Computer wins! Paper beats rock!");
+		}
+		if(userPlay.equals("R") && computerPlay.equals("S")){
+			System.out.println("User wins! Rock beats scissors!");
+		}
+		if(userPlay.equals("P") && computerPlay.equals("R")){
+			System.out.println("User wins! Paper beats rock!");
+		}
+		if(userPlay.equals("P") && computerPlay.equals("S")){
+			System.out.println("Computer wins! Scissors beats paper!");
+		}
+		if(userPlay.equals("S") && computerPlay.equals("R")){
+			System.out.println("Computer wins! Rock beats scissors!");
+		}
+		if(userPlay.equals("S") && computerPlay.equals("P")){
+			System.out.println("User wins! Scissors beats paper!");
+		}
+		
+		if(userPlay.equals("R") && computerPlay.equals("R") || userPlay.equals("P") && computerPlay.equals("P") || userPlay.equals("S") && computerPlay.equals("S")){
+			System.out.println("It's a tie!");
+		}
+		
+		System.out.println("Would you like to play again?(y/n)");
+		
+		response = responseScan.nextLine();
+		
+		if(response.equals("y")){
+			continue;
+		}else{
+			System.exit(0);
+		}
+		
+		
+	}
+
+}
+}
